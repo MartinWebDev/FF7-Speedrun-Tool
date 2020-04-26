@@ -14,7 +14,7 @@ namespace FF7_Speedrun_Control_Logic
 
         public ProcessHandler(string processName)
         {
-
+            
         }
 
         public void AttachToProcess()

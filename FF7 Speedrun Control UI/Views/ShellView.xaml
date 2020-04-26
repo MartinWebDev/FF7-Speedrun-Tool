@@ -37,45 +37,21 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
-        
+
         <!-- Row 0 -->
         <!-- Border Only -->
 
         <!-- Row 1 -->
-        <TextBlock Text="Setup Mode" Grid.Row="1" Grid.Column="1" />
-        <CheckBox Grid.Row="1" Grid.Column="4" />
+        <Button x:Name="OpenStartGameView" Grid.Row="1" Grid.Column="1" FontSize="18" Margin="8">Game</Button>
+        <Button x:Name="OpenFPSFixConfigView" Grid.Row="1" Grid.Column="2" FontSize="18" Margin="8">FPSFix Config</Button>
 
         <!-- Row 2 -->
-        <TextBlock Text="Frame Lock Value (0-255)" Grid.Row="2" Grid.Column="1" Margin=" 0 0 8 0" />
-        <Button x:Name="DecreaseFrameLock" Grid.Row="2" Grid.Column="2" Width="20">-</Button>
-        <TextBlock x:Name="FrameLockValue" MinWidth="40" Grid.Row="2" Grid.Column="3" />
-        <Button x:Name="IncreaseFrameLock" Grid.Row="2" Grid.Column="4" Width="20">+</Button>
-        <TextBlock
-            Text="{Binding Path=ConsoleOutput, Mode=OneWay}"
-            Grid.Row="3"
-            Grid.RowSpan="4"
-            Grid.Column="6"
-            Background="White"
-            Foreground="Black"
-            FontFamily="Consolas"
-        />
-        
-        <!-- Row 3 -->
-        <Button x:Name="StartGame" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4">Start Game</Button>
-
-        <!-- Row 4 -->
-        <Button x:Name="EndGame" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4">Complete Run</Button>
-
-        <!--<ContentControl
-            Grid.Row="6"
+        <ContentControl
+            Grid.Row="2"
             Grid.Column="1"
-            Grid.ColumnSpan="6" 
+            Grid.RowSpan="5"
+            Grid.ColumnSpan="6"
             x:Name="ActiveItem"
-        />-->
-        
-        <!--<TextBlock x:Name="FPSFixFullPath" Grid.Row="1" Grid.Column="1"/>
-        <TextBlock x:Name="FPSFixConfigFullPath" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="FFFullPath" Grid.Row="2" Grid.Column="1"/>
-        <TextBlock Text="{Binding Path=FFFullPath, Mode=OneWay}" Grid.Row="2" Grid.Column="2"/>-->
+        />
     </Grid>
 </Window>

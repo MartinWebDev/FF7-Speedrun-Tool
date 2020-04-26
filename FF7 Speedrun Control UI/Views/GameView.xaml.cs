@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace FF7_Speedrun_Control_UI.Views
 {
     /// <summary>
-    /// Interaction logic for ConfigView.xaml
+    /// Interaction logic for GameView.xaml
     /// </summary>
-    public partial class ConfigView : UserControl
+    public partial class GameView : UserControl
     {
-        public ConfigView()
+        public GameView()
         {
             InitializeComponent();
-        }
-
-        private void TestValue_KeyUp(object sender, KeyEventArgs e)
-        {
-
         }
     }
 }
