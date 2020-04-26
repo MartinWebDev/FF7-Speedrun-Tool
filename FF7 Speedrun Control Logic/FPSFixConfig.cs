@@ -12,10 +12,12 @@ namespace FF7_Speedrun_Control_Logic
      */
     public class FPSFixConfig
     {
+        private string _pathToConfig;
         private HexConverter _hexConverter;
 
-        public FPSFixConfig(HexConverter hexConverter)
+        public FPSFixConfig(string pathToConfig, HexConverter hexConverter)
         {
+            this._pathToConfig = pathToConfig;
             this._hexConverter = hexConverter;
         }
 

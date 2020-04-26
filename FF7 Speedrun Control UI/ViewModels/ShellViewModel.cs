@@ -1,11 +1,11 @@
-﻿using Caliburn.Micro;
-using FF7_Speedrun_Control_Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caliburn.Micro;
+using FF7_Speedrun_Control_Logic;
 
 using System.Configuration;
 using System.Collections.Specialized;
@@ -30,6 +30,7 @@ namespace FF7_Speedrun_Control_UI.ViewModels
 
         public ShellViewModel()
         {
+            ActivateItem(new InitViewModel());
             string sample = ConfigurationManager.AppSettings.Get("FF7ProcessName");
             ConfigurationManager.AppSettings.Set("FF7ProcessName", "SomethingElse");
         }
