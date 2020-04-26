@@ -146,10 +146,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FPSFix\FPSFIX.exe" />
-    <Resource Include="FPSFix\HL_Files\Hext_in\ff7.txt">
+    <Content Include="FPSFix\FPSFIX.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+    <None Include="FPSFix\HL_Files\Hext_in\ff7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
