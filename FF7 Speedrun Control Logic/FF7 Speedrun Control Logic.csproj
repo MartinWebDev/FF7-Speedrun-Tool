@@ -42,11 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigManager.cs" />
-    <Compile Include="FPSFix.cs" />
-    <Compile Include="FPSFixConfig.cs" />
-    <Compile Include="HexConverter.cs" />
-    <Compile Include="ProcessHandler.cs" />
+    <Compile Include="Utils\HexConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ConfigRepository.cs" />
     <Compile Include="Repositories\FPSFixRepository.cs" />

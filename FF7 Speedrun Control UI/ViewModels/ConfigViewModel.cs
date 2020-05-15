@@ -11,15 +11,15 @@ namespace FF7_Speedrun_Control_UI.ViewModels
 {
     public class ConfigViewModel : Screen
     {
-        private FPSFixConfig fpsConfig;
-        private ConfigManager config;
+        // private FPSFixConfig fpsConfig;
+        // private ConfigManager config;
 
         public ConfigViewModel()
         {
-            config = new ConfigManager();
-            fpsConfig = new FPSFixConfig(config.Get("FPSFixConfigFile"), new HexConverter());
-            fpsConfig.LoadFile();
-            FrameLockValue = fpsConfig.frameRateValue;
+            // config = new ConfigManager();
+            // fpsConfig = new FPSFixConfig(config.Get("FPSFixConfigFile"), new HexConverter());
+            // fpsConfig.LoadFile();
+            // FrameLockValue = fpsConfig.frameRateValue;
         }
 
         private string _message = "";
@@ -88,8 +88,8 @@ namespace FF7_Speedrun_Control_UI.ViewModels
         public void TestValue()
         {
             // Save back to fpsfix config file
-            fpsConfig.frameRateValue = FrameLockValue;
-            fpsConfig.SaveFile();
+            // fpsConfig.frameRateValue = FrameLockValue;
+            // fpsConfig.SaveFile();
             // Launch fpsfix
             // Tell user to run game and check average fps
         }

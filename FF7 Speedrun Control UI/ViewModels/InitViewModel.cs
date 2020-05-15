@@ -10,11 +10,11 @@ namespace FF7_Speedrun_Control_UI.ViewModels
 {
     public class InitViewModel : Screen
     {
-        private ConfigManager config = new ConfigManager();
+        //private ConfigManager config = new ConfigManager();
 
         public InitViewModel()
         {
-            config.Get("SteamRegKeyRoot");
+            // config.Get("SteamRegKeyRoot");
         }
 
         private string _initOutput = $"Tool started{Environment.NewLine}Locating Steam folder...{Environment.NewLine}Steam folder found!{Environment.NewLine}FF7 found.";

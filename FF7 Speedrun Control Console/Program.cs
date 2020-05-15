@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using InquirerCS;
 using FF7_Speedrun_Control_Logic;
 using FF7_Speedrun_Control_Logic.Repositories;
-using System.Diagnostics;
+using FF7_Speedrun_Control_Logic.Utils;
 
 namespace FF7_Speedrun_Control_Console
 {
@@ -45,7 +46,7 @@ namespace FF7_Speedrun_Control_Console
                             Console.ReadLine();
                             break;
                         case CommandOption.AttachToGame:
-                            RunGame();
+                            Task.Run(() => RunGame());
                             break;
                     }
                 });
@@ -59,15 +60,25 @@ namespace FF7_Speedrun_Control_Console
         {
             ConfigRepository config = new ConfigRepository();
             ProcessRepository processRepository = new ProcessRepository(config.Get("FF7ProcessName"));
-            Process fpsFix = new Process();
-            
+
+            // Start the FPSFix tool
+            using (Process proc = new Process())
+            {
+                proc.StartInfo.FileName = config.Get("FPSFixExecutable");
+                proc.StartInfo.UseShellExecute = true;
+                proc.StartInfo.Verb = "runas";
+                proc.Start();
+                proc.WaitForExit();
+            }
+
+            // Look for, and attach to, ff7 process. When found, event handler for exit will relaunch this whole process.
             processRepository.ProcessEnded += ProcessRepository_ProcessEnded;
             processRepository.WatchForClose();
         }
 
         private static void ProcessRepository_ProcessEnded(object sender, EventArgs args)
         {
-            throw new NotImplementedException();
+            RunGame();
         }
     }
 }
