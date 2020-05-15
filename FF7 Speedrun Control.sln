@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{AFCE29B2-C6B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FF7 Speedrun Control Logic.Tests", "FF7 Speedrun Control Logic.Tests\FF7 Speedrun Control Logic.Tests.csproj", "{37762A5D-6A8D-45AD-BC3D-B5E0B5BE38FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FF7 Speedrun Control Console", "FF7 Speedrun Control Console\FF7 Speedrun Control Console.csproj", "{1C8F33DB-4DCD-438F-9B6A-156640C1309F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{37762A5D-6A8D-45AD-BC3D-B5E0B5BE38FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37762A5D-6A8D-45AD-BC3D-B5E0B5BE38FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37762A5D-6A8D-45AD-BC3D-B5E0B5BE38FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C8F33DB-4DCD-438F-9B6A-156640C1309F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C8F33DB-4DCD-438F-9B6A-156640C1309F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C8F33DB-4DCD-438F-9B6A-156640C1309F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C8F33DB-4DCD-438F-9B6A-156640C1309F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{35407EA8-208E-4A6B-B7E8-AB9AF6DC9880} = {AFCE29B2-C6BF-4EFA-8506-F8597CA06020}
 		{410FAC7A-C05B-4840-9211-BF64BF7ED584} = {AFCE29B2-C6BF-4EFA-8506-F8597CA06020}
 		{37762A5D-6A8D-45AD-BC3D-B5E0B5BE38FF} = {F8DD26C5-515F-4ED9-856D-3A70708AC92A}
+		{1C8F33DB-4DCD-438F-9B6A-156640C1309F} = {AFCE29B2-C6BF-4EFA-8506-F8597CA06020}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40397346-C5E1-436C-B6FA-BEF5518206BC}

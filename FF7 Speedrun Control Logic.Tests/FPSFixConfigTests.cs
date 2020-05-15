@@ -13,8 +13,10 @@ namespace FF7_Speedrun_Control_Logic.Tests
         [TestMethod]
         public void ConvertDecimalToFileOutputReadyHex()
         {
+            // TODO: Use relative path!
+            string path = @"D:\Dev\VS2017\FF7 Speedrun Control\FF7 Speedrun Control UI\FPSFix\HL_Files\Hext_in\ff7.txt";
             HexConverter converter = new HexConverter(); // TODO: Mock me
-            FPSFixConfig config = new FPSFixConfig(converter);
+            FPSFixConfig config = new FPSFixConfig(path, converter);
             int dec = 192;
             
             string result = config.GetNewHexValue(dec);
@@ -23,9 +25,31 @@ namespace FF7_Speedrun_Control_Logic.Tests
         }
 
         [TestMethod]
-        public void GetFullStringForConfigFile()
+        public void ConvertHexFromFileToDecimalValue()
         {
+            // TODO: Use relative path!
+            string path = @"D:\Dev\VS2017\FF7 Speedrun Control\FF7 Speedrun Control UI\FPSFix\HL_Files\Hext_in\ff7.txt";
+            HexConverter converter = new HexConverter(); // TODO: Mock me
+            FPSFixConfig config = new FPSFixConfig(path, converter);
+            //string hex = "000000000000C040";
+            string hex = "000000000000C0";
 
+            int result = config.GetDecimalFromHexValue(hex);
+
+            Assert.AreEqual(192, result);
+        }
+
+        [TestMethod]
+        public void LoadConfigFile()
+        {
+            // TODO: Use relative path!
+            string path = @"D:\Dev\VS2017\FF7 Speedrun Control\FF7 Speedrun Control UI\FPSFix\HL_Files\Hext_in\ff7.txt";
+            HexConverter converter = new HexConverter(); // TODO: Mock me
+            FPSFixConfig config = new FPSFixConfig(path, converter);
+
+            config.LoadFile();
+
+            Assert.AreEqual(config.frameRateValue, 192);
         }
     }
 }

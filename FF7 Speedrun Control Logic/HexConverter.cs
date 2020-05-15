@@ -15,7 +15,7 @@ namespace FF7_Speedrun_Control_Logic
 
         public int ToDec(string hex)
         {
-            return Convert.ToInt32(hex, 16);
+            return int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }
     }
 }

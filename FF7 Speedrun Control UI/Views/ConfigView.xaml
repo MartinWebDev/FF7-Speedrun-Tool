@@ -38,5 +38,8 @@
         <Button x:Name="IncreaseFrameLock" Width="40" Grid.Row="1" Grid.Column="3" Margin="5">+</Button>
         <Button x:Name="TestValue" Grid.Row="1" Grid.Column="4" Width="120" Margin="5">Test Value</Button>
         <TextBlock x:Name="Message" Grid.Row="1" Grid.Column="5" Width="auto" Margin="5" />
+        
+        <!-- Row 2 -->
+        <TextBlock x:Name="SaveWarning" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" />
     </Grid>
 </UserControl>
