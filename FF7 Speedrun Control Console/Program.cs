@@ -8,11 +8,14 @@ using InquirerCS;
 using FF7_Speedrun_Control_Logic;
 using FF7_Speedrun_Control_Logic.Repositories;
 using FF7_Speedrun_Control_Logic.Utils;
+using System.Threading;
 
 namespace FF7_Speedrun_Control_Console
 {
     class Program
     {
+        static bool listening = false;
+
         static void Main(string[] args)
         {
             bool done = false;
@@ -48,6 +51,8 @@ namespace FF7_Speedrun_Control_Console
                         case CommandOption.AttachToGame:
                             Task.Run(() => RunGame());
                             break;
+                        case CommandOption.DetatchFromGame:
+                            break;
                     }
                 });
                 Inquirer.Go();
@@ -55,7 +60,7 @@ namespace FF7_Speedrun_Control_Console
                 if (done) return;
             }
         }
-
+        
         private static void RunGame()
         {
             ConfigRepository config = new ConfigRepository();
@@ -72,12 +77,20 @@ namespace FF7_Speedrun_Control_Console
             }
 
             // Look for, and attach to, ff7 process. When found, event handler for exit will relaunch this whole process.
+            if (listening)
+            {
+                processRepository.ProcessEnded -= ProcessRepository_ProcessEnded;
+                listening = false;
+            }
+
             processRepository.ProcessEnded += ProcessRepository_ProcessEnded;
             processRepository.WatchForClose();
+            listening = true;
         }
 
         private static void ProcessRepository_ProcessEnded(object sender, EventArgs args)
         {
+            Thread.Sleep(200);
             RunGame();
         }
     }

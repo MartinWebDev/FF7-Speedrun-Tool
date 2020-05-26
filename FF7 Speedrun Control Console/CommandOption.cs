@@ -12,6 +12,7 @@ namespace FF7_Speedrun_Control_Console
         SaveFPSFixValueToFile,
         LaunchFPSFixTool,
         AttachToGame,
+        DetatchFromGame,
         Exit
     }
 }
